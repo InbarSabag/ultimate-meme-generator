@@ -1,0 +1,9 @@
+
+footer{
+    height: 207px;
+    background-color: var(--clr-brand);
+    color:white;
+    font-family: montserrat-thin,sans-serif;
+    font-size: 1.1875em;
+}
+

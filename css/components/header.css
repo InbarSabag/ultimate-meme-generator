@@ -1,5 +1,15 @@
 
 /* main header */
+header{
+    height: 66px;
+    background-color: var(--clr-brand);
+    padding-inline-start: 49px;
+    color: white;
+}
+
+.logo{
+height: 22px;
+}
 /* 
 .main-header-container {
     background-color: var(--clr3);

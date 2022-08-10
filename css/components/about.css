@@ -1,0 +1,46 @@
+
+.about-conteiner{
+    height: 567px;
+}
+
+
+.my-photo{
+    height: 322px;
+    width: 322px;
+    border-radius: 50%;
+}
+
+.about-conteiner .self-introduce{
+    font-size: 1.25em;
+    margin-bottom: 49px;
+    margin-top:0px
+
+}
+.about-conteiner .introduce-container{
+    padding-inline-start: 38px;
+
+}
+
+.about-conteiner .my-name{
+    font-size: 1.5625em;
+    }
+
+h4{
+    margin-bottom: 0px;
+}
+
+.socials>* .btn{
+    height: 39px;
+    width: 39px;
+    background-color: var(--clr-brand);
+    border-radius: 12px;
+    border: 0;
+    cursor: pointer;
+}
+
+.btn img{
+    height: 27px;
+    width: 27px;
+    filter: invert(100%);
+}
+

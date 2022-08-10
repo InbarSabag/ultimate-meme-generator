@@ -1,11 +1,12 @@
 /* typography */
 
-@font-face {
-    /* font-family: eurofurence; */
-    /* src: url(../fonts/eurofurence/eurof55.ttf); */
-}
 
-@font-face {
-    font-family: fa;
-    src: url(../fonts/fontAwesome/fa-brands-400.ttf);
-}
+    @font-face {
+        font-family: montserrat-thin;
+        src: url(/fonts/montserrat/montserrat-thin.ttf);
+    }
+    @font-face {
+        font-family: montserrat;
+        src: url(/fonts/montserrat/montserrat.ttf);
+    }
+    

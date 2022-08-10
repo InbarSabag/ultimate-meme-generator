@@ -1,7 +1,7 @@
 /* HELPERS */
 
 /* flex helpers */
-/* 
+
 .flex {
     display: flex;
 }
@@ -14,14 +14,19 @@
     align-items: center;
 }
 
-.flex.column {
+.flex.justify-center {
+    justify-content: center;
+}
+
+.flex.flex-direction-column {
     flex-direction: column;
-} */
+}
+
 
 /* list helpers */
-/* 
+
 .clean-list {
     margin: 0;
     padding: 0;
     list-style-type: none;
-} */
+}

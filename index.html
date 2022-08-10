@@ -4,18 +4,85 @@
 <head>
     <meta charset='utf-8'>
     <meta http-equiv='X-UA-Compatible' content='IE=edge'>
-    <title>Inbar S | PROJECT</title>
-    <link rel="icon" type="image" href="img/icon.png">
+    <title>Inbar S | MEME Generator</title>
+    <link rel="icon" type="image" href="img/favicon.png">
     <meta name='viewport' content='width=device-width, initial-scale=1'>
     <link rel='stylesheet' type='text/css' media='screen' href='css/main.css'>
-    <link rel="stylesheet" href="lib/bootstrap/bootstrap.css">
 </head>
+
 <body>
 
+    <div class="main-screen full" onclick="toggleMenu()"></div>
+
+    <header class="main-header main-layout flex align-center">
+        <div class="main-header-container flex align-center space-between">
+            <img class="logo" src="img/LOGO.png" alt="MEME Generator">
+            <nav class="main-nav flex">
+                <ul class="main-nav-list flex clean-list">
+                    <li><a class="flex align-center justify-center" href="#">Gallery</a></li>
+                    <li class="divider"><a class="flex align-center justify-center">|</a></li>
+                    <li><a class="flex align-center justify-center" href="#">About</a></li>
+                </ul>
+            </nav>
+            <!-- <button class="toggle-menu" onclick="toggleMenu()">☰</button> -->
+        </div>
+    </header>
+
+    <!-- <div class="search-container flex align-center space-between">
+            <input placeholder="Enter search keyword" type="text">
+            <div class="keywords">
+                <ul class="flex clean-list">
+                    <li><a class="key1 flex align-center justify-center" href="#"></a></li>
+                    <li><a class="key2 flex align-center justify-center" href="#"></a></li>
+                    <li><a class="key3 flex align-center justify-center" href="#"></a></li>
+                    <li><a class="key4 flex align-center justify-center" href="#"></a></li>
+                    <li><a class="key5 flex align-center justify-center" href="#"></a></li>
+                </ul>
+            </div>
+    </div> -->    
+    
+        <main class="main-content main-layout flex flex-direction-column">
+            <section class="Image-Gallery">
+                <div class="gallery-container grid">
+                    Image-Gallery
+                </div>
+            </section>
+            <section class="Meme-Editor" hidden>
+                <div class="editor-container cards-layout flex ">
+                </div>
+            </section>
+
+        </main>
+
+        <div class="about-conteiner flex align-center justify-center">
+            <img class="my-photo" src="img/my-photo.jpg">
+            <div class="introduce-container flex-direction-column">
+                <h4 class="my-name">Inbar Sabag</h4>
+                <p class="self-introduce">Full-stack developing student at Coding Academy.</p>
+            <div class="socials">
+                <a href="https://www.linkedin.com/" target="_blank"><button class="btn linkedin"><img src="img/ICONS/linkedin-logo.png" alt="linkedin"></button></a>
+                <a href="https://www.facebook.com/" target="_blank"><button class="btn facebook"><img src="img/ICONS/facebook-logo.png" alt="facebook"></button></a>
+                <a href="https://www.github.com/" target="_blank"><button class="btn github"><img src="img/ICONS/github-logo.png" alt="github"></button></a>
+                <!-- <button class="btn linkedin" href="https://www.facebook.com/"><img src="img/ICONS/linkedin-logo.png" alt="linkedin"></button>
+                <button class="btn github"><img src="img/ICONS/github-logo.png" alt="github"></button> -->
+            </div>
+            </div>
+        </div>
+
+        <footer class="main-footer-container flex align-center justify-center flex-direction-column">
+            <img class="logo" src="img/LOGO.png" alt="MEME Generator">
+            <p>© Inbar Sabag | All rights reserved  2022</p>
+        </footer>
+    
+        <script>
+            function toggleMenu() {
+                document.body.classList.toggle('menu-opened');
+            }
+        </script>
+
 </body>
-<script src="lib/hammer/hammer.min.js"></script>
-<script src="lib/bootstrap/bootstrap.bundel.js"></script>
-<script src="lib/jquery/jquery.js"></script>
-<script src="js/.service.js"></script>
-<script src="js/.controller.js"></script>
+<script src="js/services/util.service.js"></script>
+<script src="js/services/storage.service.js"></script>
+<script src="js/main.js"></script>
+
 </html>

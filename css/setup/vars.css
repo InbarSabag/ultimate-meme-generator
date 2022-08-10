@@ -2,14 +2,16 @@
 
 :root {
     /* color plate */
-    --clr1: #f8f8f8;
-    --clr2: #1d1d1d;
-
+    --clr-brand: #ff7f00;
+    --clr-main-background: #e3e3e3;
+    --clr-sprt-line: #8a8a8a;
+    --clr-search-border: #646464
+    
     
     /* mq variables */
-    --large: 980px;
+    /* --large: 980px;
     --medium: 860px;
-    --small: 500px;
+    --small: 500px; */
 
 
     /* letter spacing */
