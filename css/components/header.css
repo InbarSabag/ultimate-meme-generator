@@ -5,6 +5,7 @@ header{
     background-color: var(--clr-brand);
     padding-inline-start: 49px;
     color: white;
+    color: #f58799;
 }
 
 .logo{

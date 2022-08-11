@@ -10,7 +10,7 @@
     <link rel='stylesheet' type='text/css' media='screen' href='css/main.css'>
 </head>
 
-<body>
+<body onload="onInit()">
 
     <div class="main-screen full" onclick="toggleMenu()"></div>
 
@@ -27,10 +27,10 @@
             <!-- <button class="toggle-menu" onclick="toggleMenu()">☰</button> -->
         </div>
     </header>
-
+    <!-- fix -->
     <!-- <div class="search-container flex align-center space-between">
-            <input placeholder="Enter search keyword" type="text">
-            <div class="keywords">
+        <input placeholder="Enter search keyword" type="text">
+        <div class="keywords">
                 <ul class="flex clean-list">
                     <li><a class="key1 flex align-center justify-center" href="#"></a></li>
                     <li><a class="key2 flex align-center justify-center" href="#"></a></li>
@@ -42,13 +42,15 @@
     </div> -->    
     
         <main class="main-content main-layout flex flex-direction-column">
+            <!-- todo -->
             <section class="Image-Gallery">
                 <div class="gallery-container grid">
-                    Image-Gallery
                 </div>
             </section>
+            <!-- todo -->
             <section class="Meme-Editor" hidden>
                 <div class="editor-container cards-layout flex ">
+                    meme-editor
                 </div>
             </section>
 
@@ -63,8 +65,6 @@
                 <a href="https://www.linkedin.com/" target="_blank"><button class="btn linkedin"><img src="img/ICONS/linkedin-logo.png" alt="linkedin"></button></a>
                 <a href="https://www.facebook.com/" target="_blank"><button class="btn facebook"><img src="img/ICONS/facebook-logo.png" alt="facebook"></button></a>
                 <a href="https://www.github.com/" target="_blank"><button class="btn github"><img src="img/ICONS/github-logo.png" alt="github"></button></a>
-                <!-- <button class="btn linkedin" href="https://www.facebook.com/"><img src="img/ICONS/linkedin-logo.png" alt="linkedin"></button>
-                <button class="btn github"><img src="img/ICONS/github-logo.png" alt="github"></button> -->
             </div>
             </div>
         </div>
@@ -82,7 +82,10 @@
 
 </body>
 <script src="js/services/util.service.js"></script>
-<script src="js/services/storage.service.js"></script>
-<script src="js/main.js"></script>
+<script src="js/services/util.service.js"></script>
+<script src="js/services/gallery.service.js"></script>
+<script src="js/gallery.controller.js"></script>
+<script src="js/services/meme.service.js"></script>
+<script src="js/meme.controller.js"></script>
 
 </html>

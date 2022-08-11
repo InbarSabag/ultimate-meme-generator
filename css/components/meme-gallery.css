@@ -1,0 +1,16 @@
+
+.gallery-container{
+    padding: 27px;
+    display: grid;
+    grid-auto-flow: row;
+    background-color: var(--clr-main-background);
+    grid-template-columns: repeat(auto-fill, minmax(300px,1fr));
+    grid-gap: 20px;
+    justify-content: start;
+}
+
+.gallery-container img{
+    height: 300px;
+    cursor: pointer;
+    /* width: 200px; */
+}
