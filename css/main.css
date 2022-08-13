@@ -15,8 +15,8 @@
 /* COMPONENTS */
     /* every part of the page - has a css file contains settings (exp: header, main, footer) */
     @import "components/header.css";
-    @import "components/main-content.css";
     @import "components/meme-gallery.css";
+    @import "components/meme-editor.css";
     @import "components/about.css";
     @import "components/footer.css";
 /* ...CHANGE & ADD MORE... */

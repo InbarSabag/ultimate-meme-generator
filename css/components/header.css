@@ -3,13 +3,16 @@
 header{
     height: 66px;
     background-color: var(--clr-brand);
-    padding-inline-start: 49px;
     color: white;
     color: #f58799;
 }
 
 .logo{
 height: 22px;
+}
+
+.main-nav{
+    justify-content: right;
 }
 /* 
 .main-header-container {

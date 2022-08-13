@@ -38,7 +38,7 @@ h4{
     cursor: pointer;
 }
 
-.btn img{
+.socials>* .btn img{
     height: 27px;
     width: 27px;
     filter: invert(100%);

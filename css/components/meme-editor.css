@@ -1,0 +1,89 @@
+
+.meme-editor{
+    height: 600px;
+    background-color: var(--clr-main-background);
+    padding-top: 25px;
+}
+
+/**** CANVAS: ****************************************************/
+canvas{
+    background-color: white;
+}
+
+/**** EDIT SECTION: *********************************************/
+
+.edit-section{
+    width: 375px;
+    height: 500px;
+    justify-content: space-between;
+}
+
+.edit{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    
+}
+
+.row2{
+    justify-content: center;
+}
+
+.row2 > *:not(:last-child){
+    margin-right: 20px;
+}
+
+.row6{
+    justify-content: end;
+}
+
+.edit>*{
+    height: 60px;
+    border: none;
+    border-radius: 10px;
+    background-color: white;
+    cursor: pointer;
+}
+
+.edit input{
+    width: 100%;
+    font-size: 20px;
+}
+
+.edit .btn{
+    width: 60px;
+    height: 60px;
+    border: none;
+    border-radius: 10px;
+    background-color: white;
+    cursor: pointer;
+}
+
+.edit-section select{
+    width: 220px;
+    cursor: pointer;
+    font-size: 24px;
+}
+
+.edit-section img{
+    height: 35px;
+}
+
+.edit .stickers{
+    flex-wrap: wrap;
+    height: 130px;
+    width: 100%;
+}
+
+.sticker{
+    font-size: 40px;
+    cursor: grab;
+}
+
+.btn-share{
+    background-color: var(--clr-brand);
+    color: white;
+    height: 60px;
+    width: 120px;
+    font-size: 20px;
+}

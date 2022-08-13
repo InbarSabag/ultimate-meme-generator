@@ -37,6 +37,11 @@ function _createGalleryItem(keywords) {
     return {
         id: gId,
         url: `img/meme-imgs (square)/${gId}.jpg`,
+        imgStr: `<img src="img/meme-imgs (square)/${gId}.jpg">`,
         keywords
     }
+}
+
+function getImg(id){
+    return gImgs.find(img => img.id = id)
 }

@@ -14,71 +14,153 @@
 
     <div class="main-screen full" onclick="toggleMenu()"></div>
 
-    <header class="main-header main-layout flex align-center">
-        <div class="main-header-container flex align-center space-between">
-            <img class="logo" src="img/LOGO.png" alt="MEME Generator">
-            <nav class="main-nav flex">
-                <ul class="main-nav-list flex clean-list">
-                    <li><a class="flex align-center justify-center" href="#">Gallery</a></li>
-                    <li class="divider"><a class="flex align-center justify-center">|</a></li>
-                    <li><a class="flex align-center justify-center" href="#">About</a></li>
-                </ul>
-            </nav>
-            <!-- <button class="toggle-menu" onclick="toggleMenu()">☰</button> -->
-        </div>
+    <!-- ! header -->
+    <header class="main-header main-layout flex align-center space-between">
+        <!-- <div class="main-header-container flex align-center space-between"> -->
+        <img class="logo" src="img/LOGO.png" alt="MEME Generator">
+        <nav class="main-nav flex">
+            <ul class="main-nav-list flex clean-list">
+                <li><a class="flex align-center justify-center" href="#">Gallery</a></li>
+                <li class="divider"><a class="flex align-center justify-center">|</a></li>
+                <li><a class="flex align-center justify-center" href="#">About</a></li>
+            </ul>
+        </nav>
+        <!-- <button class="toggle-menu" onclick="toggleMenu()">☰</button> -->
+        <!-- </div> -->
     </header>
-    <!-- fix -->
-    <!-- <div class="search-container flex align-center space-between">
-        <input placeholder="Enter search keyword" type="text">
-        <div class="keywords">
-                <ul class="flex clean-list">
-                    <li><a class="key1 flex align-center justify-center" href="#"></a></li>
-                    <li><a class="key2 flex align-center justify-center" href="#"></a></li>
-                    <li><a class="key3 flex align-center justify-center" href="#"></a></li>
-                    <li><a class="key4 flex align-center justify-center" href="#"></a></li>
-                    <li><a class="key5 flex align-center justify-center" href="#"></a></li>
-                </ul>
+
+
+    <main class="main-content  flex flex-direction-column">
+        <!-- ! memes gallery -->
+        <section class="images-Gallery main-layout" >
+            <div class="search-container flex align-center space-between">
+                <div class="search-input">
+                    <form action="" class="search">
+                        <input placeholder="Enter search keyword" type="text" onchange="onSearchMeme(ev.value)">
+                        <button class="btn search-btn"><img class="search-icon"
+                                src="img/ICONS/search-icon.png"></button>
+                    </form>
+                </div>
+                <button class="btn flexible-btn" onclick="onFlexible()">I'm flexible</button>
+                <div class="keywords flex">
+                    <ul class="keywords-list flex clean-list">
+                    </ul>
+                </div>
             </div>
-    </div> -->    
-    
-        <main class="main-content main-layout flex flex-direction-column">
-            <!-- todo -->
-            <section class="Image-Gallery">
-                <div class="gallery-container grid">
+            <div class="gallery-container"></div>
+        </section>
+        <!-- ! meme editor -->
+        <section class="meme-editor" hidden>
+            <div class="editor-container main-layout cards-layout flex ">
+                <div class="canvas-container">
+                    <canvas width="500" height="500" ></canvas>
                 </div>
-            </section>
-            <!-- todo -->
-            <section class="Meme-Editor" hidden>
-                <div class="editor-container cards-layout flex ">
-                    meme-editor
+                <div class="edit-section flex flex-direction-column">
+                    <div class="edit row1">
+                        <input type="text" placeholder="Enter text to meme" onkeyup="onTxtType(value)">
+                    </div>
+                    <div class="edit row2">
+                        <button class="btn switch-line-btn" onclick="onSwitchLine()"><img
+                                src="img/ICONS/up-and-down-opposite-double-arrows-side-by-side.png"></button>
+                        <button class="btn add-btn" onclick="onAddTxtBox()"><img src="img/ICONS/add.png"></button>
+                        <button class="btn delete-btn" onclick="onDeleteTxtBox()"><img
+                                src="img/ICONS/trash.png"></button>
+                    </div>
+                    <div class="edit row3">
+                        <button class="btn bigger-btn" onclick="onTxtSize('+')"><img
+                                src="img/ICONS/increase font - icon.png"></button>
+                        <button class="btn smaller-btn" onclick="onTxtSize('-')"><img
+                                src="img/ICONS/decrease font - icon.png"></button>
+                        <button class="btn left-btn" onclick="onTxtAlign('l')"><img
+                                src="img/ICONS/align-to-left.png"></button>
+                        <button class="btn center-btn" onclick="onTxtAlign('c')"><img
+                                src="img/ICONS/center-text-alignment.png"></button>
+                        <button class="btn right-btn" onclick="onTxtAlign('r')"><img
+                                src="img/ICONS/align-to-right.png"></button>
+                    </div>
+                    <div class="edit row4">
+                        <select name="select font-family" onchange="onFontChange(this.value)">
+                            <option value="impact">Impact</option>
+                            <option value="ariel">Ariel</option>
+                            <option value="courier">Courier</option>
+                            <option value="times">Times</option>
+                        </select>
+                        <div style="position:relative; display:inline-block">
+                            <button class="btn stroke-clr-btn"><img src="img/ICONS/text stroke.png"></button>
+                            <input type="color" value="#000" onchange="onChangeStrokeClr(value)"
+                                style="opacity:0; position:absolute; left:0;top:0;width:100%;height:100%" />
+                        </div>
+                        <div style="position:relative; display:inline-block">
+                            <button class="btn fill-clr-btn"><img src="img/ICONS/paint-board-and-brush.png"></button>
+                            <input type="color" value="#ffffff" onclick="onChangeFillClr(value)"
+                                style="opacity:0; position:absolute; left:0;top:0;width:100%;height:100%" />
+                        </div>
+                    </div>
+                    <div class="edit row5">
+                        <div class="stickers flex align-center space-between ">
+                            <a class="sticker" onmousedown="onStickerGrab(this)"
+                                ontouchstart="onStickerGrab(this)">😀</a>
+                            <a class="sticker" onmousedown="onStickerGrab(this)"
+                                ontouchstart="onStickerGrab(this)">😂</a>
+                            <a class="sticker" onmousedown="onStickerGrab(this)"
+                                ontouchstart="onStickerGrab(this)">😍</a>
+                            <a class="sticker" onmousedown="onStickerGrab(this)"
+                                ontouchstart="onStickerGrab(this)">🤩</a>
+                            <a class="sticker" onmousedown="onStickerGrab(this)"
+                                ontouchstart="onStickerGrab(this)">🥳</a>
+                            <a class="sticker" onmousedown="onStickerGrab(this)"
+                                ontouchstart="onStickerGrab(this)">💗</a>
+                            <a class="sticker" onmousedown="onStickerGrab(this)"
+                                ontouchstart="onStickerGrab(this)">😎</a>
+                            <a class="sticker" onmousedown="onStickerGrab(this)"
+                                ontouchstart="onStickerGrab(this)">😱</a>
+                            <a class="sticker" onmousedown="onStickerGrab(this)"
+                                ontouchstart="onStickerGrab(this)">😡</a>
+                            <a class="sticker" onmousedown="onStickerGrab(this)"
+                                ontouchstart="onStickerGrab(this)">😪</a>
+                            <a class="sticker" onmousedown="onStickerGrab(this)"
+                                ontouchstart="onStickerGrab(this)">💩</a>
+                            <a class="sticker" onmousedown="onStickerGrab(this)"
+                                ontouchstart="onStickerGrab(this)">💢</a>
+                        </div>
+                    </div>
+                    <div class="edit row6">
+                        <button class="btn-share" onclick="onShare()">Share</button>
+                    </div>
                 </div>
-            </section>
+            </div>
+        </section>
 
-        </main>
+    </main>
 
-        <div class="about-conteiner flex align-center justify-center">
-            <img class="my-photo" src="img/my-photo.jpg">
-            <div class="introduce-container flex-direction-column">
-                <h4 class="my-name">Inbar Sabag</h4>
-                <p class="self-introduce">Full-stack developing student at Coding Academy.</p>
+    <!-- ! about -->
+    <div class="about-conteiner flex align-center justify-center">
+        <img class="my-photo" src="img/my-photo.jpg">
+        <div class="introduce-container flex-direction-column">
+            <h4 class="my-name">Inbar Sabag</h4>
+            <p class="self-introduce">Full-stack developing student at Coding Academy.</p>
             <div class="socials">
-                <a href="https://www.linkedin.com/" target="_blank"><button class="btn linkedin"><img src="img/ICONS/linkedin-logo.png" alt="linkedin"></button></a>
-                <a href="https://www.facebook.com/" target="_blank"><button class="btn facebook"><img src="img/ICONS/facebook-logo.png" alt="facebook"></button></a>
-                <a href="https://www.github.com/" target="_blank"><button class="btn github"><img src="img/ICONS/github-logo.png" alt="github"></button></a>
-            </div>
+                <a href="https://www.linkedin.com/" target="_blank"><button class="btn linkedin"><img
+                            src="img/ICONS/linkedin-logo.png" alt="linkedin"></button></a>
+                <a href="https://www.facebook.com/" target="_blank"><button class="btn facebook"><img
+                            src="img/ICONS/facebook-logo.png" alt="facebook"></button></a>
+                <a href="https://www.github.com/" target="_blank"><button class="btn github"><img
+                            src="img/ICONS/github-logo.png" alt="github"></button></a>
             </div>
         </div>
+    </div>
 
-        <footer class="main-footer-container flex align-center justify-center flex-direction-column">
-            <img class="logo" src="img/LOGO.png" alt="MEME Generator">
-            <p>© Inbar Sabag | All rights reserved  2022</p>
-        </footer>
-    
-        <script>
-            function toggleMenu() {
-                document.body.classList.toggle('menu-opened');
-            }
-        </script>
+    <!-- ! footer -->
+    <footer class="main-footer-container flex align-center justify-center flex-direction-column">
+        <img class="logo" src="img/LOGO.png" alt="MEME Generator">
+        <p>© Inbar Sabag | All rights reserved 2022</p>
+    </footer>
+
+    <script>
+        function toggleMenu() {
+            document.body.classList.toggle('menu-opened')
+        }
+    </script>
 
 </body>
 <script src="js/services/util.service.js"></script>
