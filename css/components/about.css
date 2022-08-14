@@ -1,35 +1,32 @@
-
-.about-conteiner{
+.about-container {
     height: 567px;
 }
 
-
-.my-photo{
+.my-photo {
     height: 322px;
     width: 322px;
     border-radius: 50%;
 }
 
-.about-conteiner .self-introduce{
+.about-container .self-introduce {
     font-size: 1.25em;
     margin-bottom: 49px;
-    margin-top:0px
-
+    margin-top: 0px
 }
-.about-conteiner .introduce-container{
+
+.about-container .introduce-container {
     padding-inline-start: 38px;
-
 }
 
-.about-conteiner .my-name{
+.about-container .my-name {
     font-size: 1.5625em;
-    }
+}
 
-h4{
+h4 {
     margin-bottom: 0px;
 }
 
-.socials>* .btn{
+.socials>* .btn {
     height: 39px;
     width: 39px;
     background-color: var(--clr-brand);
@@ -38,9 +35,8 @@ h4{
     cursor: pointer;
 }
 
-.socials>* .btn img{
+.socials>* .btn img {
     height: 27px;
     width: 27px;
     filter: invert(100%);
 }
-

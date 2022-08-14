@@ -5,10 +5,15 @@
     padding-top: 25px;
 }
 
-/**** CANVAS: ****************************************************/
-canvas{
-    background-color: white;
+.editor-container{
+    justify-content: space-evenly;
+
 }
+
+/**** CANVAS: ****************************************************/
+/* canvas{
+    background-color: white;
+} */
 
 /**** EDIT SECTION: *********************************************/
 
@@ -16,6 +21,7 @@ canvas{
     width: 375px;
     height: 500px;
     justify-content: space-between;
+    padding: 0px;
 }
 
 .edit{
@@ -34,7 +40,7 @@ canvas{
 }
 
 .row6{
-    justify-content: end;
+    justify-content: space-evenly;
 }
 
 .edit>*{
@@ -80,7 +86,8 @@ canvas{
     cursor: grab;
 }
 
-.btn-share{
+.btn-share,
+.btn-save{
     background-color: var(--clr-brand);
     color: white;
     height: 60px;

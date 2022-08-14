@@ -21,8 +21,8 @@
         <nav class="main-nav flex">
             <ul class="main-nav-list flex clean-list">
                 <li><a class="flex align-center justify-center" href="#">Gallery</a></li>
-                <li class="divider"><a class="flex align-center justify-center">|</a></li>
-                <li><a class="flex align-center justify-center" href="#">About</a></li>
+                <li><a class="flex align-center justify-center" href='#' onclick="showSavedMemes()">Memes</a></li>
+                <li><a class="flex align-center justify-center" href="#about">About</a></li>
             </ul>
         </nav>
         <!-- <button class="toggle-menu" onclick="toggleMenu()">☰</button> -->
@@ -36,7 +36,7 @@
             <div class="search-container flex align-center space-between">
                 <div class="search-input">
                     <form action="" class="search">
-                        <input placeholder="Enter search keyword" type="text" onchange="onSearchMeme(ev.value)">
+                        <input class="search-input" placeholder="Enter search keyword" type="text" onkeyup="onSearch(this.value)">
                         <button class="btn search-btn"><img class="search-icon"
                                 src="img/ICONS/search-icon.png"></button>
                     </form>
@@ -51,7 +51,7 @@
         </section>
         <!-- ! meme editor -->
         <section class="meme-editor" hidden>
-            <div class="editor-container main-layout cards-layout flex ">
+            <div class="editor-container flex">
                 <div class="canvas-container">
                     <canvas width="500" height="500" ></canvas>
                 </div>
@@ -60,22 +60,22 @@
                         <input type="text" placeholder="Enter text to meme" onkeyup="onTxtType(value)">
                     </div>
                     <div class="edit row2">
-                        <button class="btn switch-line-btn" onclick="onSwitchLine()"><img
+                        <button class="btn btn-switch-line" onclick="onSwitchLine()"><img
                                 src="img/ICONS/up-and-down-opposite-double-arrows-side-by-side.png"></button>
-                        <button class="btn add-btn" onclick="onAddTxtBox()"><img src="img/ICONS/add.png"></button>
-                        <button class="btn delete-btn" onclick="onDeleteTxtBox()"><img
+                        <button class="btn btn-add" onclick="onAddTxtBox()"><img src="img/ICONS/add.png"></button>
+                        <button class="btn btn-delete" onclick="onDeleteTxtBox()"><img
                                 src="img/ICONS/trash.png"></button>
                     </div>
                     <div class="edit row3">
-                        <button class="btn bigger-btn" onclick="onTxtSize('+')"><img
+                        <button class="btn btn-bigger" onclick="onTxtSize('+')"><img
                                 src="img/ICONS/increase font - icon.png"></button>
-                        <button class="btn smaller-btn" onclick="onTxtSize('-')"><img
+                        <button class="btn btn-smaller" onclick="onTxtSize('-')"><img
                                 src="img/ICONS/decrease font - icon.png"></button>
-                        <button class="btn left-btn" onclick="onTxtAlign('l')"><img
+                        <button class="btn btn-left" onclick="onTxtAlign('start')"><img
                                 src="img/ICONS/align-to-left.png"></button>
-                        <button class="btn center-btn" onclick="onTxtAlign('c')"><img
+                        <button class="btn btn-center" onclick="onTxtAlign('center')"><img
                                 src="img/ICONS/center-text-alignment.png"></button>
-                        <button class="btn right-btn" onclick="onTxtAlign('r')"><img
+                        <button class="btn btn-right" onclick="onTxtAlign('end')"><img
                                 src="img/ICONS/align-to-right.png"></button>
                     </div>
                     <div class="edit row4">
@@ -86,12 +86,12 @@
                             <option value="times">Times</option>
                         </select>
                         <div style="position:relative; display:inline-block">
-                            <button class="btn stroke-clr-btn"><img src="img/ICONS/text stroke.png"></button>
+                            <button class="btn btn-stroke-clr"><img src="img/ICONS/text stroke.png"></button>
                             <input type="color" value="#000" onchange="onChangeStrokeClr(value)"
                                 style="opacity:0; position:absolute; left:0;top:0;width:100%;height:100%" />
                         </div>
                         <div style="position:relative; display:inline-block">
-                            <button class="btn fill-clr-btn"><img src="img/ICONS/paint-board-and-brush.png"></button>
+                            <button class="btn btn-fill-clr"><img src="img/ICONS/paint-board-and-brush.png"></button>
                             <input type="color" value="#ffffff" onclick="onChangeFillClr(value)"
                                 style="opacity:0; position:absolute; left:0;top:0;width:100%;height:100%" />
                         </div>
@@ -125,7 +125,9 @@
                         </div>
                     </div>
                     <div class="edit row6">
+                        <button class="btn-save" onclick="onSave()">Save</button>
                         <button class="btn-share" onclick="onShare()">Share</button>
+
                     </div>
                 </div>
             </div>
@@ -134,7 +136,7 @@
     </main>
 
     <!-- ! about -->
-    <div class="about-conteiner flex align-center justify-center">
+    <section id="about" class="about-container flex align-center justify-center">
         <img class="my-photo" src="img/my-photo.jpg">
         <div class="introduce-container flex-direction-column">
             <h4 class="my-name">Inbar Sabag</h4>
@@ -148,26 +150,27 @@
                             src="img/ICONS/github-logo.png" alt="github"></button></a>
             </div>
         </div>
-    </div>
+    </section>
 
     <!-- ! footer -->
     <footer class="main-footer-container flex align-center justify-center flex-direction-column">
         <img class="logo" src="img/LOGO.png" alt="MEME Generator">
         <p>© Inbar Sabag | All rights reserved 2022</p>
     </footer>
-
+<!-- 
     <script>
         function toggleMenu() {
             document.body.classList.toggle('menu-opened')
         }
-    </script>
+    </script> -->
 
 </body>
 <script src="js/services/util.service.js"></script>
-<script src="js/services/util.service.js"></script>
+<script src="js/services/storage.service.js"></script>
+<script src="js/services/saved-memes.service.js"></script>
 <script src="js/services/gallery.service.js"></script>
-<script src="js/gallery.controller.js"></script>
 <script src="js/services/meme.service.js"></script>
-<script src="js/meme.controller.js"></script>
+<script src="js/controllers/gallery.controller.js"></script>
+<script src="js/controllers/meme.controller.js"></script>
 
 </html>

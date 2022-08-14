@@ -27,7 +27,6 @@ function createGallery() {
     gImgs.push(_createGalleryItem(['funny', 'laugh']))
     gImgs.push(_createGalleryItem(['two', 'putin', 'president']))
     gImgs.push(_createGalleryItem(['buzz', 'woody', 'explain', 'toy story']))
-    console.log("🚀 ~ file: gallery.controller.js ~ line 6 ~ gImgs", gImgs)
 }
 
 //**** INTERNAL FUNCTIONS: ************************************//
@@ -37,11 +36,17 @@ function _createGalleryItem(keywords) {
     return {
         id: gId,
         url: `img/meme-imgs (square)/${gId}.jpg`,
-        imgStr: `<img src="img/meme-imgs (square)/${gId}.jpg">`,
+        // imgStr: `<img src="img/meme-imgs (square)/${gId}.jpg ">`,
         keywords
     }
 }
 
 function getImg(id){
-    return gImgs.find(img => img.id = id)
+    return gImgs.find(img => img.id === +id)
 }
+
+function updateKeywordsList(keyword){
+    var count = gKeywordSearchCountMap[keyword]
+    gKeywordSearchCountMap[keyword] = (count) ? ++count : 1
+}
+
