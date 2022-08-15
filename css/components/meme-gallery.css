@@ -48,8 +48,7 @@ border-bottom: 2px solid black;
 
 /**** gallery: *********************************************/
 .gallery-container{
-    padding: 27px;
-
+    padding-top: 27px;
     display: grid;
     grid-auto-flow: row;
     background-color: var(--clr-main-background);
@@ -61,4 +60,9 @@ border-bottom: 2px solid black;
 .gallery-container img{
     height: 300px;
     cursor: pointer;
+    border-radius: 5px;
+}
+
+.gallery-container img:hover{
+    outline: 3px var(--clr-brand) solid;
 }

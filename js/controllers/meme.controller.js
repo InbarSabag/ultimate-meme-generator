@@ -102,7 +102,6 @@ function onChangeFillClr(color) {
 
 function onStickerGrab(sticker) { // todo
     console.log('🚀 ~ onStickerGrab ~ sticker', sticker)
-
 }
 
 function onSave() {

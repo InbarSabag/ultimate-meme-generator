@@ -2,5 +2,6 @@
 
 
 .main-layout > *:not(.full) {
-    padding: 0 50px; 
+    padding-left:50px; 
+    padding-right:50px; 
 } 

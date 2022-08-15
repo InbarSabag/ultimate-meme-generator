@@ -27,7 +27,7 @@ function renderKeywords() {
 
 function onFlexible() {
     console.log('🚀 ~ onFlexible ~ ')
-    // todo
+    setImg(getImg(getRandomInt(1, gImg.length)))
 }
 
 function onKeywordSearch(keyword) {
@@ -41,6 +41,7 @@ function onKeywordSearch(keyword) {
 }
 
 function onSearch(searchValue) {
+    searchValue = searchValue.toLowerCase()
     const imgsToRender = gImgs.filter(img => img.keywords.some(key => key.includes(searchValue)))
     renderGallery(imgsToRender)
 }
